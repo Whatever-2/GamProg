@@ -40,7 +40,7 @@ public class BulletController : MonoBehaviour
     {
          if (collision.gameObject.CompareTag("MainCamera"))
         {
-        Destroy(ToDes);
+        Destroy(gameObject);
         }
     }
     void OnTriggerStay2D (Collider2D collision)
