@@ -13,8 +13,8 @@ public class BulletController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = transform.right * BulletSpd;
 
-        
         DestroyBullet();
+        
     }
 
 
@@ -38,7 +38,10 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerExit2D (Collider2D collision)
     {
-        
+         if (collision.gameObject.CompareTag("MainCamera"))
+        {
+        Destroy(ToDes);
+        }
     }
     void OnTriggerStay2D (Collider2D collision)
     {
