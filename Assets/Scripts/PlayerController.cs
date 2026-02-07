@@ -64,8 +64,6 @@ public GameObject BulletPref;
         {
             Shoot();
         }
-
-
     }
 
 

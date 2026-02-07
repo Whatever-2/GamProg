@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "DownShooter",
+    "maps": [
+        {
+            "name": "Shooter",
+            "id": "cbc61ce0-bbfb-4cec-a589-958990876533",
+            "actions": [
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "a02eafd8-b47e-47ba-9037-912b091cfb00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0445ad49-69f7-4bb7-b0a8-b0514e55996c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
