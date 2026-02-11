@@ -13,7 +13,9 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
+        playerInput.ActivateInput();
         ShootCmd = playerInput.actions.FindAction("Shoot");
+
     }
 
     void Update()
@@ -21,6 +23,11 @@ public class Shoot : MonoBehaviour
         if (ShootCmd.WasPressedThisFrame())
         {
             SpawnBullet();
+        }
+
+        if (TimerCountdown.instance.timer <= 0)
+        {
+            playerInput.DeactivateInput();
         }
     }
 
