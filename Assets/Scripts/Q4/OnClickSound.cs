@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class OnClickSound : MonoBehaviour
 {
-    [SerializeField] int soundIndex;
-
-    public void PlaySound()
+    public void PlaySound(int soundIndex)
     {
         AudioManager.instance.PlaySFX(soundIndex);
     }
