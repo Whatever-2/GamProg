@@ -51,7 +51,6 @@ void MoveInput()
 
         }else if (MoveAction.WasReleasedThisFrame())
         {
-            LastDirection = direction;
             animator.SetFloat("LastInputX", LastDirection.x);
             animator.SetFloat("LastInputY", LastDirection.y);
             animator.SetBool("isWalking", false);
