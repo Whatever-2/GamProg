@@ -9,6 +9,9 @@ TagManager:
   - Border
   - Increment
   - Decrement
+  - WaterEnemy
+  - FireEnemy
+  - GrassEnemy
   layers:
   - Default
   - TransparentFX
