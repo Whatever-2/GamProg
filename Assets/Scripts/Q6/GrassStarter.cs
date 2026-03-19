@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class FirePlayer : Player
-{   
-    public PokeBullet bulletPrefab;
+public class GrassStarter : Player
+{
+   public PokeBullet bulletPrefab;
 
     protected override void Attack()
     {
            if (Input1.WasPressedThisFrame())
         {
             PokeBullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.Initialize(LastDirection);
-            bullet.transform.right = LastDirection; // Rotate the bullet to face the direction it's moving
+     
+
         }  
             
     }
@@ -19,11 +19,9 @@ public class FirePlayer : Player
     {
         base.OnTriggerEnter2D(collision);
 
-        if (collision.gameObject.CompareTag("WaterEnemy"))
+        if (collision.gameObject.CompareTag("FireEnemy"))
         {
             Destroy(gameObject);
         }
     }
-
-
 }

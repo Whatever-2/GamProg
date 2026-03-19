@@ -28,6 +28,18 @@ protected Vector2 LastDirection;
         
         Input1 = playerInput.actions.FindAction("Shoot");
         
+        if (!GetComponent<Rigidbody2D>())
+        {
+            Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider == null)
+        {
+            collider = gameObject.AddComponent<BoxCollider2D>();
+        }
+        collider.isTrigger = true;
+
         //animator = GetComponent<Animator>();
     }
 

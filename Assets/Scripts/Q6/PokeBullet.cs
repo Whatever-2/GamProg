@@ -1,10 +1,14 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.InputSystem;
+
 
 public class PokeBullet : MonoBehaviour
 {
     public GameObject ToDes;
-    public float BulletSpd;
-    private Rigidbody2D rb;
+    public float BulletSpd = 5f;
+    protected Rigidbody2D rb;
     public float DestroyTimer = 5.0f;
 
     // Optional initial direction provided by the shooter.
@@ -13,9 +17,13 @@ public class PokeBullet : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
     }
 
-    void Start()
+    protected void Start()
     {
         Vector2 direction = initialDirection ?? (Vector2)transform.right;
         rb.linearVelocity = direction.normalized * BulletSpd;
@@ -37,7 +45,9 @@ public class PokeBullet : MonoBehaviour
         Destroy(ToDes, DestroyTimer);
     }
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision)
+
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {

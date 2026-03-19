@@ -12,6 +12,7 @@ TagManager:
   - WaterEnemy
   - FireEnemy
   - GrassEnemy
+  - Pokeball
   layers:
   - Default
   - TransparentFX
